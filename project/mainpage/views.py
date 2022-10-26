@@ -1,6 +1,13 @@
 from django.shortcuts import render
-
+from .models import *
 # Create your views here.
 
 def mainpage(request):
-    return render(request,"index.html")
+
+    new = news.objects.all()
+
+    context = {
+        'new' : new
+    }
+
+    return render(request,"index.html", context)
