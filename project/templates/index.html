@@ -506,11 +506,13 @@
             </div><!-- end container -->
         </header><!-- end header -->
 
-        {% for a in new %}
+        
 
         <section class="section first-section">
             <div class="container-fluid">
+                {% for a in new_left_side %}
                 <div class="masonry-blog clearfix">
+                    
                     <div class="left-side">
                         <div class="masonry-box post-media">
                              <img src="{{a.news_picture.url}}" alt="" class="img-fluid">
@@ -527,8 +529,10 @@
                         </div><!-- end post-media -->
                     </div><!-- end left-side -->
 
-                
+                    {% endfor %}
                     <div class="center-side">
+                        {% for a in new_center_top %}
+
                         <div class="masonry-box post-media">
                              <img src="{{a.news_picture.url}}" alt="" class="img-fluid">
                              <div class="shadoweffect">
@@ -542,32 +546,25 @@
                                 </div><!-- end shadow-desc -->
                             </div><!-- end shadow -->
                         </div><!-- end post-media -->
-                    
+                        {% endfor %}
+                        {% for a in new_center_bottom %}
+                            <div class="masonry-box small-box post-media">
+                                <img src="{{a.news_picture.url}}" alt="" class="img-fluid">
+                                <div class="shadoweffect">
+                                    <div class="shadow-desc">
+                                        <div class="blog-meta">
+                                            <span class="bg-green"><a href="blog-category-01.html" title="">{{a.news_category}}</a></span>
+                                            <h4><a href="single.html" title="">{{a.news_title}}</a></h4>
+                                        </div><!-- end meta -->
+                                    </div><!-- end shadow-desc -->
+                                </div><!-- end shadow -->
+                            </div><!-- end post-media -->
+                            {% endfor %}
+                    </div><!-- end center-side -->
+                   
 
-                        <div class="masonry-box small-box post-media">
-                             <img src="{{a.news_picture.url}}" alt="" class="img-fluid">
-                             <div class="shadoweffect">
-                                <div class="shadow-desc">
-                                    <div class="blog-meta">
-                                        <span class="bg-green"><a href="blog-category-01.html" title="">{{a.news_category}}</a></span>
-                                        <h4><a href="single.html" title="">{{a.news_title}}</a></h4>
-                                    </div><!-- end meta -->
-                                </div><!-- end shadow-desc -->
-                            </div><!-- end shadow -->
-                        </div><!-- end post-media -->
 
-                        <div class="masonry-box small-box post-media">
-                             <img src="{{a.news_picture.url}}" alt="" class="img-fluid">
-                             <div class="shadoweffect">
-                                <div class="shadow-desc">
-                                    <div class="blog-meta">
-                                        <span class="bg-green"><a href="blog-category-01.html" title="">{{a.news_category}}</a></span>
-                                        <h4><a href="single.html" title="">{{a.news_title}}</a></h4>
-                                    </div><!-- end meta -->
-                                </div><!-- end shadow-desc -->
-                            </div><!-- end shadow -->
-                        </div><!-- end post-media -->
-                    </div><!-- end left-side -->
+                    {% for a in new_right_side %}
 
                     <div class="right-side hidden-md-down">
                         <div class="masonry-box post-media">
@@ -584,13 +581,14 @@
                              </div><!-- end shadow -->
                         </div><!-- end post-media -->
                     </div><!-- end right-side -->
-
-                    
+                    {% endfor %}
+                 
                 </div><!-- end masonry -->
+              
             </div>
         </section>
 
-        {% endfor %}
+    
 
         <section class="section">
             <div class="container">
