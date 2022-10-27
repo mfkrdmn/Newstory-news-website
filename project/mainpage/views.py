@@ -17,3 +17,14 @@ def mainpage(request):
     }
 
     return render(request,"index.html", context)
+
+def singlePage(request, pk):
+
+    new = news.objects.filter(news_title=pk)
+
+    context = {
+        'new' : new
+    }
+
+
+    return render(request,"single_page.html", context)
